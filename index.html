@@ -1,0 +1,74 @@
+<html>
+<head>
+<script language="JavaScript" type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="ui/jquery-ui.css">
+<script src="ui/jquery-ui.js"></script>
+<style>
+    .button_active {
+        background-color: blue;
+    }
+    .button {
+        width: 150px;
+        border: none;
+        border-radius: 20px;
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    .block {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+</style>
+</head>
+<body>
+    <div class="buttons">
+        <button id="background" class="button button_active">backgroundColor</button>
+        <button id="color" class="button">color</button>
+    </div>
+        <div>
+            <div id="slider" style="background-color: red;"></div>
+            <br/>
+            <div id="slider1" style="background-color: green;"></div>
+            <br/>
+            <div id="slider2" style="background-color: blue;"></div>
+        </div>
+        <div class="block" style="max-width: 50%; width: 300px;">
+            В чем счастье?
+            В жизненном пути,
+            Куда твой долг велит идти,
+            Врагов не знать, преград не мерить,
+            Любить, надеяться и верить.
+        </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#tabs").tabs();
+        $("#slider, #slider1, #slider2").slider();
+        $("#slider, #slider1, #slider2").slider();
+        $("#slider, #slider1, #slider2").mousemove((e) => {
+            let red = $("#slider").slider("value");
+            let green = $("#slider1").slider("value");
+            let blue = $("#slider2").slider("value");
+            if ($("#color").hasClass('button_active')) {
+                $(".block").css({'color': 'rgb(' + red + '%,' + green + '%,' + blue + '%, 1)'});
+            }
+            if ($("#background").hasClass('button_active')) {
+                $(".block").css({'background-color': 'rgb(' + red + '%,' + green + '%,' + blue + '%, 1)'});
+            }
+        });
+        $("#color").click((e) => {
+            $("#color").addClass('button_active');
+            $("#background").removeClass('button_active');
+        });
+        $("#background").click((e) => {
+            $("#background").addClass('button_active');
+            $("#color").removeClass('button_active');
+        });
+    });
+    </script>
+</html>
