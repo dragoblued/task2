@@ -1,5 +1,5 @@
 {
-    "name": "task2/package",
+    "name": "dragoblued/task2",
     "description": "simple class",
     "autoload": {
         "psr-4": {
@@ -12,5 +12,7 @@
             "email": "qwemee@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=7.1.0"
+    }
 }
