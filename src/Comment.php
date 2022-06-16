@@ -11,7 +11,7 @@
             curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'GET');
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             $result = curl_exec($ch);
-            return json_decode($result);
+            return $result;
         }
 
         public function postRequest($text, $name) {
@@ -26,7 +26,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data); 
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             $result = curl_exec($ch);
-            return json_decode($result);
+            return $result;
         }
 
         public function putRequest($text, $name, $id) {
@@ -41,7 +41,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data); 
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             $result = curl_exec($ch);
-            return json_decode($result);
+            return $result;
         }
     }
 ?>
