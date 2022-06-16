@@ -3,7 +3,7 @@
     "description": "simple class",
     "autoload": {
         "psr-4": {
-            "Task2\\Package\\": "src/"
+            "Dragoblued\\Task2\\": "src/"
         }
     },
     "authors": [
