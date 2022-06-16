@@ -1,5 +1,5 @@
 <?php
-    namespace dragoblued\task2;
+    namespace Dragoblued\Task2;
     class Comment {
         private $url;
         public function  __construct($url = 'https://medtech2.dragoblued.site/api/v1/comments') {
