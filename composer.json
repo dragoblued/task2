@@ -1,0 +1,16 @@
+{
+    "name": "task2/package",
+    "description": "simple class",
+    "autoload": {
+        "psr-4": {
+            "Task2\\Package\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Natalia",
+            "email": "qwemee@gmail.com"
+        }
+    ],
+    "require": {}
+}
