@@ -3,10 +3,10 @@
     class Comment {
         private $url;
         public function  __construct($url = 'https://medtech2.dragoblued.site/api/v1/comments') {
-            $this->$url = $url;
+            $this->url = $url;
         }
         public function getRequest() {
-            $ch = curl_init($this->$url); 
+            $ch = curl_init($this->url); 
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'GET');
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -15,8 +15,7 @@
         }
 
         public function postRequest($text, $name) {
-            print_r($this->$url);
-            $ch = curl_init($this->$url); 
+            $ch = curl_init($this->url); 
             $data = json_encode([
                 'name' => $name,
                 'text' => $text
@@ -31,7 +30,7 @@
         }
 
         public function putRequest($text, $name, $id) {
-            $ch = curl_init($this->$url . '/' . $id); 
+            $ch = curl_init($this->url . '/' . $id); 
             $data = json_encode([
                 'name' => $name,
                 'text' => $text
