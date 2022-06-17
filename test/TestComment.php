@@ -11,6 +11,8 @@
         }
 
         public function testPostRequest() {
+            $name = 'name';
+            $text = 'text';
             $comment = new Comment();
             $comment = json_decode($comment->postRequest($name, $text));
             $this->assertSame( $comment2->comment->text, $text );
@@ -18,27 +20,14 @@
         }
 
         public function testPutRequest() {
+            $name = 'change_name';
+            $text = 'change_text';
+            $id = 1;
             $comment = new Comment();
             $comments = json_decode($comment->putRequest($name, $text, $id));
             $this->assertSame( $comment2->comment->text, $text );
             $this->assertSame( $comment2->comment->name, $name );
             $this->assertSame( $comment2->comment->id, $id );
-        }
-
-        public function providerPostRequest ()
-        {
-            return array (
-                array (2, 2),
-                array (2, 3),
-            );
-        }
-
-        public function providerPutRequest ()
-        {
-            return array (
-                array ("name", "text", 1),
-                array ("name2", "text2", 2),
-            );
         }
     }
 ?>
