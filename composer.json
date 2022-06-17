@@ -6,6 +6,11 @@
             "Dragoblued\\Task2\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Dragoblued\\Task2Test\\": "test/"
+        }
+    },
     "authors": [
         {
             "name": "Natalia",
