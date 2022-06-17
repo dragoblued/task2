@@ -8,7 +8,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Dragoblued\\Task2Test\\": "test/"
+            "Dragoblued\\Task2\\": "test/"
         }
     },
     "authors": [

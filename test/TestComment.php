@@ -1,5 +1,5 @@
 <?php
-    namespace Dragoblued\Task2Test;
+    namespace Dragoblued\Task2;
     use PHPUnit\Framework\TestCase;
     use Dragoblued\Task2\Comment;
 
