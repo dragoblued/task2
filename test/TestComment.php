@@ -14,9 +14,9 @@
             $name = 'name';
             $text = 'text';
             $comment = new Comment();
-            $comment = json_decode($comment->postRequest($name, $text));
-            $this->assertSame( $comment2->comment->text, $text );
-            $this->assertSame( $comment2->comment->name, $name );
+            $result = json_decode($comment->postRequest($text, $name));
+            $this->assertSame( $result->comment->text, $text );
+            $this->assertSame( $result->comment->name, $name )
         }
 
         public function testPutRequest() {
@@ -24,10 +24,10 @@
             $text = 'change_text';
             $id = 1;
             $comment = new Comment();
-            $comments = json_decode($comment->putRequest($name, $text, $id));
-            $this->assertSame( $comment2->comment->text, $text );
-            $this->assertSame( $comment2->comment->name, $name );
-            $this->assertSame( $comment2->comment->id, $id );
+            $result = json_decode($comment->putRequest($text, $name, $id));
+            $this->assertSame( $result->comment->text, $text );
+            $this->assertSame( $result->comment->name, $name );
+            $this->assertSame( $result->comment->id, $id );
         }
     }
 ?>
